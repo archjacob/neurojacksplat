@@ -34,3 +34,8 @@ python main.py --images_dir ./data/your_scene
 ## License
 
 This project is licensed under the MIT License.
+
+---
+
+## View live on Hugging Face:
+https://huggingface.co/itsjakup/neurojacksplat-v2-70m/upload/main
