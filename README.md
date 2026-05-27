@@ -1,19 +1,36 @@
-# Differential Gaussian Rasterization
 
-Used as the rasterization engine for the paper "3D Gaussian Splatting for Real-Time Rendering of Radiance Fields". If you can make use of it in your own research, please be so kind to cite us.
 
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@Article{kerbl3Dgaussians,
-      author       = {Kerbl, Bernhard and Kopanas, Georgios and Leimk{\"u}hler, Thomas and Drettakis, George},
-      title        = {3D Gaussian Splatting for Real-Time Radiance Field Rendering},
-      journal      = {ACM Transactions on Graphics},
-      number       = {4},
-      volume       = {42},
-      month        = {July},
-      year         = {2023},
-      url          = {https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/}
-}</code></pre>
-  </div>
-</section>
+# NEUROJACKSPLAT-V2-70M
+
+NeuroJackSplat-V2-70M is an advanced 3D Reconstruction pipeline that uses **DINOv2** and **Structure from Motion (COLMAP)** to reconstruct geometry from "in-the-wild" images.
+
+## Topics
+`3d-reconstruction` `computer-vision` `gaussian-splatting` `zero-shot-learning` `dinov2` `point-cloud` `colmap` `pytorch`
+
+---
+
+## Engineering (Pipeline)
+1. **Calibration:** Automatic spatial structuring with `pycolmap`.
+2. **Feature Extraction:** Using vision transformers (DINOv2) to understand depth.
+3. **Latent Space Mapping:** Generating depth maps with our Cost-Volume architecture.
+4. **Rendering:** Interactive 3D visualization via [Plotly/WebGL].
+
+## Installation
+```bash
+pip install torch pycolmap plotly pillow numpy
+
+```
+
+## Usage
+
+To generate a 3D point cloud from your images:
+
+```python
+# Run the pipeline with your image directory
+python main.py --images_dir ./data/your_scene
+
+```
+
+## License
+
+This project is licensed under the MIT License.
